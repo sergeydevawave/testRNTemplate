@@ -1,0 +1,8 @@
+{
+  "name": "AwaveRN",
+  "version": "1.0.0",
+  "description": "React Native Template",
+  "repository": "git@github.com:sergeydevawave/testRNTemplate.git",
+  "author": "Awave",
+  "license": "MIT"
+}

@@ -19,11 +19,9 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
   Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -76,7 +74,11 @@ function App(): JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-
+          <Section title="Step One">
+            <MaterialCommunityIcons name="home" size={30} />
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
         </View>
       </ScrollView>
     </SafeAreaView>

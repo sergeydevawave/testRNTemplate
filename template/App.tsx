@@ -16,6 +16,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {Provider} from 'react-redux';
+import {setupStore} from '@store/store';
 
 import {
   Colors,
@@ -26,6 +28,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
+
+const store = setupStore();
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -61,27 +65,29 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            <MaterialCommunityIcons name="home" size={30} />
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={backgroundStyle}>
+          <Header />
+          <View
+            style={{
+              backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            }}>
+            <Section title="Step One">
+              <MaterialCommunityIcons name="home" size={30} />
+              Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+              screen and then come back to see your edits.
+            </Section>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Provider>
   );
 }
 

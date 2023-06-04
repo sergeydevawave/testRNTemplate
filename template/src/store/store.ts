@@ -1,6 +1,9 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import { userReducer } from "./users";
 
-const combineReducer = combineReducers({});
+const combineReducer = combineReducers({
+  user: userReducer
+});
 
 const rootReducer = (state: any, action: any) => {
   if (action.type === "@user/userLogOut") {

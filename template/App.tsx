@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 import {Provider} from 'react-redux';
 import {setupStore} from '@store/store';
+import { API_URL, API_TOKEN } from '@env';
 
 import {
   Colors,
@@ -82,7 +83,7 @@ function App(): JSX.Element {
             <Section title="Step One">
               <MaterialCommunityIcons name="home" size={30} />
               Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-              screen and then come back to see your edits.
+              screen and then come back to see your edits. - {API_URL} - {API_TOKEN}
             </Section>
           </View>
         </ScrollView>

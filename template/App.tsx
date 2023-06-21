@@ -17,7 +17,7 @@ import {
   View,
 } from 'react-native';
 import {Provider} from 'react-redux';
-import {setupStore} from '@store/store';
+import { setupStore } from '@store/store';
 import { API_URL, API_TOKEN } from '@env';
 
 import {
@@ -25,6 +25,7 @@ import {
   Header,
 } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MainNavigator from '@navigation';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -81,10 +82,9 @@ function App(): JSX.Element {
               backgroundColor: isDarkMode ? Colors.black : Colors.white,
             }}>
             <Section title="Step One">
-              <MaterialCommunityIcons name="home" size={30} />
-              Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-              screen and then come back to see your edits. - {API_URL} - {API_TOKEN}
+              {/*<MaterialCommunityIcons name="home" size={30} />*/}
             </Section>
+            <MainNavigator />
           </View>
         </ScrollView>
       </SafeAreaView>

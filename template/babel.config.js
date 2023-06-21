@@ -20,6 +20,7 @@ module.exports = {
         alias: {
           "@screens": "./src/screens",
           "@components": "./src/components",
+          "@navigation": "./src/navigation",
           "@assets": "./src/assets",
           "@store": "./src/store",
         },
@@ -29,6 +30,7 @@ module.exports = {
       envName: "APP_ENV",
       moduleName: "@env",
       path: ".env"
-    }]
+    }],
+    "react-native-reanimated/plugin",
   ]
 };
